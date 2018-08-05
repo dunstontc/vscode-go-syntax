@@ -1,0 +1,43 @@
+{
+    "name": "vscode-go-syntax",
+    "displayName": "vscode-go-syntax",
+    "description": "Syntax highlighting for go.",
+    "version": "0.0.1",
+    "publisher": "dunstontc",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/dunstontc/vscode-go-syntax.git"
+    },
+    "bugs": {
+        "url": "https://github.com/dunstontc/vscode-go-syntax/issues"
+    },
+    "scripts": {"start": "gulp watch"},
+    "engines": {"vscode": "^1.20.0"},
+    "categories": ["Programming Languages"],
+    "contributes": {
+        "languages": [
+            {
+                "id": "go",
+                "aliases": ["go"],
+                "extensions": [".go"],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "go",
+                "scopeName": "source.go",
+                "path": "./syntaxes/go.tmLanguage.json"
+            }
+        ]
+    },
+    "galleryBanner": {
+        "color": "#1e1e1e",
+        "theme": "dark"
+    },
+    "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-json5-to-json": "^0.2.1",
+        "gulp-merge-json": "^1.3.0"
+    }
+}

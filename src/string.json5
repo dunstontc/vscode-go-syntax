@@ -1,0 +1,18 @@
+{
+  "repository": {
+    "string": {
+      "patterns": [
+        {
+          "name": "string.quoted.single.go",
+          "begin": "'",
+          "end": "'",
+        },
+        {
+          "name": "string.quoted.double.go",
+          "begin": "\"",
+          "end": "\"",
+        },
+      ]
+    }
+  }
+}
