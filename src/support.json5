@@ -1,7 +1,13 @@
 {
   "repository": {
     "support": {
-      "patterns": []
+      "patterns": [
+        {
+          "comment": "Built-in functions",
+          "match": "\\b(append|cap|close|complex|copy|delete|imag|len|make|new|panic|print|println|real|recover)\\b(?=\\()",
+          "name": "support.function.builtin.go",
+        },
+      ]
     }
   }
 }

@@ -1,7 +1,81 @@
 {
   "repository": {
     "variable": {
-      "patterns": []
-    }
+			"patterns": [
+        {
+          "match": "(?<!var)\\s*(\\w+(?:\\.\\w+)*(?>,\\s*\\w+(?:\\.\\w+)*)*)(?=\\s*=(?!=))",
+          "captures": {
+            "1": {
+              "patterns": [
+                {
+                  "match": "\\d\\w*",
+                  "name": "invalid.illegal.identifier.go"
+                },
+                {
+                  "match": "\\w+(?:\\.\\w+)*",
+                  "name": "variable.other.assignment.go",
+                  "captures": {"0": {"patterns": [{"include": "#punctuation"}]}}
+                },
+                // {"include": "#punctuation"},
+              ]
+            }
+          }
+        },
+				{
+					"match": "(\\w+(?:,\\s*\\w+)*)(\\s+\\*?\\w+(?:\\.\\w+)?\\s*)?(?=\\s*=)",
+					"captures": {
+						"1": {
+							"patterns": [
+								{
+									"match": "\\d\\w*",
+									"name": "invalid.illegal.identifier.go"
+								},
+								{
+									"match": "\\w+",
+									"name": "variable.other.assignment.go"
+								},
+								// {"include": "#punctuation"}
+							]
+						},
+						"2": {"patterns": [{"include": "$self"}]}
+					}
+				},
+				{
+					"match": "(\\w+(?:,\\s*\\w+)*)(\\s+(\\[(\\d*|\\.\\.\\.)\\])*\\*?(<-)?\\w+(?:\\.\\w+)?\\s*[^=].*)",
+					"captures": {
+						"1": {
+							"patterns": [
+								{
+									"match": "\\d\\w*",
+									"name": "invalid.illegal.identifier.go"
+								},
+								{
+									"match": "\\w+",
+									"name": "variable.other.declaration.go"
+								},
+								// {"include": "#punctuation"}
+							]
+						},
+						"2": {"patterns": [{"include": "$self"}]}
+					}
+				},
+				{
+					"begin": "\\(",
+					"beginCaptures": {"0": {"name": "punctuation.definition.variables.begin.bracket.round.go"}},
+					"end": "\\)",
+					"endCaptures": {"0": {"name": "punctuation.definition.variables.end.bracket.round.go"}},
+					"patterns": [
+						{"include": "$self"},
+						// {"include": "#variable"},
+					]
+        },
+        {
+          "begin": "\\b(var)\\s+",
+          "beginCaptures": {"1": {"name": "keyword.var.go"}},
+          "end": "(?!\\G)",
+          // "patterns": [{"include": "#variable"}]
+        },
+			]
+		}
   }
 }

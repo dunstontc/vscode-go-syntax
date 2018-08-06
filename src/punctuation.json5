@@ -1,7 +1,42 @@
 {
   "repository": {
     "punctuation": {
-      "patterns": []
+      "patterns": [
+        {
+          "match": ";",
+          "name": "punctuation.terminator.go",
+        },
+        {
+					"match": ",",
+					"name": "punctuation.other.comma.go",
+				},
+				{
+					"match": "\\.(?!\\.\\.)",
+					"name": "punctuation.other.period.go",
+				},
+				{
+					"match": ":(?!=)",
+					"name": "punctuation.other.colon.go",
+        },
+        {
+					"begin": "{",
+					"beginCaptures": {"0": {"name": "punctuation.definition.begin.bracket.curly.go"}},
+					"end": "}",
+					"endCaptures": {"0": {"name": "punctuation.definition.end.bracket.curly.go"}},
+					"patterns": [{"include": "$self"}]
+				},
+				{
+					"begin": "\\(",
+					"beginCaptures": {"0": {"name": "punctuation.definition.begin.bracket.round.go"}},
+					"end": "\\)",
+					"endCaptures": {"0": {"name": "punctuation.definition.end.bracket.round.go"}},
+					"patterns": [{"include": "$self"}]
+				},
+				{
+					"match": "\\[|\\]",
+					"name": "punctuation.definition.bracket.square.go"
+				}
+      ]
     }
   }
 }

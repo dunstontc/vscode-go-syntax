@@ -1,7 +1,84 @@
 {
   "repository": {
     "entity": {
-      "patterns": []
+      "patterns": [
+        {
+          "comment": "Function declarations",
+          "match": "^(\\bfunc\\b)(?:\\s+(\\([^\\)]+\\)\\s+)?(\\w+)(?=\\())?",
+          "captures": {
+            "1": {
+              "name": "keyword.function.go"
+            },
+            "2": {
+              "patterns": [
+                {"include": "#brackets"},
+                {"include": "#operators"},
+              ]
+            },
+            "3": {
+              "patterns": [
+                {
+                  "match": "\\d\\w*",
+                  "name": "invalid.illegal.identifier.go"
+                },
+                {
+                  "match": "\\w+",
+                  "name": "entity.name.function.go"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "comment": "Functions",
+          "match": "(\\bfunc\\b)|(\\w+)(?=\\()",
+          "captures": {
+            "1": {"name": "keyword.function.go"},
+            "2": {
+              "patterns": [
+                {
+                  "match": "\\d\\w*",
+                  "name": "invalid.illegal.identifier.go"
+                },
+                {
+                  "match": "\\w+",
+                  "name": "support.function.go"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "begin": "\\b(package)\\s+",
+          "beginCaptures": {"1": {"name": "keyword.package.go"}},
+          "end": "(?!\\G)",
+          "patterns": [
+            {
+              "match": "\\d\\w*",
+              "name": "invalid.illegal.identifier.go"
+            },
+            {
+              "match": "\\w+",
+              "name": "entity.name.package.go"
+            }
+          ]
+        },
+        {
+          "begin": "\\b(type)\\s+",
+          "beginCaptures": {"1": {"name": "keyword.type.go"}},
+          "end": "(?!\\G)",
+          "patterns": [
+            {
+              "match": "\\d\\w*",
+              "name": "invalid.illegal.identifier.go"
+            },
+            {
+              "match": "\\w+",
+              "name": "entity.name.type.go"
+            }
+          ]
+        },
+      ]
     }
   }
 }

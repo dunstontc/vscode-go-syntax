@@ -1,7 +1,20 @@
 {
   "repository": {
     "comment": {
-      "patterns": []
+      "patterns": [
+        {
+					"begin": "/\\*",
+					"end": "\\*/",
+					"captures": {"0": {"name": "punctuation.definition.comment.go"}},
+					"name": "comment.block.go"
+				},
+				{
+					"begin": "//",
+					"beginCaptures": {"0": {"name": "punctuation.definition.comment.go"}},
+					"end": "$",
+					"name": "comment.line.double-slash.go"
+				}
+      ]
     }
   }
 }
