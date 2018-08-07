@@ -1,7 +1,7 @@
 {
     "name": "vscode-go-syntax",
     "displayName": "vscode-go-syntax",
-    "description": "Syntax highlighting for Go",
+    "description": "Syntax highlighting for Go (WIP)",
     "version": "0.0.1",
     "publisher": "dunstontc",
     "repository": {
