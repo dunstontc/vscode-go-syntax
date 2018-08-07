@@ -532,6 +532,10 @@
         "variable": {
             "patterns": [
                 {
+                    "match": "\\w+(?=\\s\\:\\=)",
+                    "name": "variable.other.assignment.go"
+                },
+                {
                     "match": "(?<!var)\\s*(\\w+(?:\\.\\w+)*(?>,\\s*\\w+(?:\\.\\w+)*)*)(?=\\s*=(?!=))",
                     "captures": {
                         "1": {
@@ -552,6 +556,9 @@
                                             ]
                                         }
                                     }
+                                },
+                                {
+                                    "include": "#punctuation"
                                 }
                             ]
                         }
@@ -569,6 +576,9 @@
                                 {
                                     "match": "\\w+",
                                     "name": "variable.other.assignment.go"
+                                },
+                                {
+                                    "include": "#punctuation"
                                 }
                             ]
                         },
@@ -593,6 +603,9 @@
                                 {
                                     "match": "\\w+",
                                     "name": "variable.other.declaration.go"
+                                },
+                                {
+                                    "include": "#punctuation"
                                 }
                             ]
                         },
@@ -620,7 +633,8 @@
                     },
                     "patterns": [
                         {
-                            "include": "$self"
+                            "match": "\\w+",
+                            "name": "variable.other.param.go"
                         }
                     ]
                 },
@@ -631,7 +645,12 @@
                             "name": "keyword.var.go"
                         }
                     },
-                    "end": "(?!\\G)"
+                    "end": "(?!\\G)",
+                    "patterns": [
+                        {
+                            "include": "$self"
+                        }
+                    ]
                 }
             ]
         }
