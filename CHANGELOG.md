@@ -2,4 +2,4 @@
 
 
 ## 0.0.1 
-- Init.
+- Currently supports the same highlighting as VSCode's default Go support.
