@@ -1,7 +1,7 @@
 {
     "name": "vscode-go-syntax",
     "displayName": "vscode-go-syntax",
-    "description": "Syntax highlighting for Go.",
+    "description": "Syntax highlighting for Go",
     "version": "0.0.1",
     "publisher": "dunstontc",
     "repository": {
@@ -33,6 +33,7 @@
         "color": "#1e1e1e",
         "theme": "dark"
     },
+    "icon": "assets/logo.png",
     "devDependencies": {
         "gulp": "^3.9.1",
         "gulp-json5-to-json": "^0.2.1",

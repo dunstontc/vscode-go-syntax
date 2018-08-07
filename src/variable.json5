@@ -7,6 +7,10 @@
           "name": "variable.other.assignment.go",
         },
         {
+          "match": "(?<=\\()(?>\\w+)(?=\\))",
+          "name": "variable.other.param.go",
+        },
+        {
           "match": "(?<!var)\\s*(\\w+(?:\\.\\w+)*(?>,\\s*\\w+(?:\\.\\w+)*)*)(?=\\s*=(?!=))",
           "captures": {
             "1": {
@@ -63,21 +67,21 @@
 						"2": {"patterns": [{"include": "$self"}]}
 					}
 				},
-				{
-					"begin": "\\(",
-					"beginCaptures": {"0": {"name": "punctuation.definition.variables.begin.bracket.round.go"}},
-					"end": "\\)",
-					"endCaptures": {"0": {"name": "punctuation.definition.variables.end.bracket.round.go"}},
-					"patterns": [
-						// {
-            //   "include": "$self"
-            // },
-            {
-              "match": "\\w+",
-              "name": "variable.other.param.go"
-            },
-					]
-        },
+				// {
+				// 	"begin": "\\(",
+				// 	"beginCaptures": {"0": {"name": "punctuation.definition.variables.begin.bracket.round.go"}},
+				// 	"end": "\\)",
+				// 	"endCaptures": {"0": {"name": "punctuation.definition.variables.end.bracket.round.go"}},
+				// 	"patterns": [
+				// 		// {
+        //     //   "include": "$self"
+        //     // },
+        //     {
+        //       "match": "\\w+",
+        //       "name": "variable.other.param.go"
+        //     },
+				// 	]
+        // },
         {
           "begin": "\\b(var)\\s+",
           "beginCaptures": {"1": {"name": "keyword.var.go"}},

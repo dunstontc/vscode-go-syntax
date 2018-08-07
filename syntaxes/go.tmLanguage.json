@@ -536,6 +536,10 @@
                     "name": "variable.other.assignment.go"
                 },
                 {
+                    "match": "(?<=\\()(?>\\w+)(?=\\))",
+                    "name": "variable.other.param.go"
+                },
+                {
                     "match": "(?<!var)\\s*(\\w+(?:\\.\\w+)*(?>,\\s*\\w+(?:\\.\\w+)*)*)(?=\\s*=(?!=))",
                     "captures": {
                         "1": {
@@ -617,26 +621,6 @@
                             ]
                         }
                     }
-                },
-                {
-                    "begin": "\\(",
-                    "beginCaptures": {
-                        "0": {
-                            "name": "punctuation.definition.variables.begin.bracket.round.go"
-                        }
-                    },
-                    "end": "\\)",
-                    "endCaptures": {
-                        "0": {
-                            "name": "punctuation.definition.variables.end.bracket.round.go"
-                        }
-                    },
-                    "patterns": [
-                        {
-                            "match": "\\w+",
-                            "name": "variable.other.param.go"
-                        }
-                    ]
                 },
                 {
                     "begin": "\\b(var)\\s+",
