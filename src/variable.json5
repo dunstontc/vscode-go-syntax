@@ -20,6 +20,10 @@
                   "name": "invalid.illegal.identifier.go"
                 },
                 {
+                  "match": "_",
+                  "name": "variable.other.blank.go",
+                },
+                {
                   "match": "\\w+(?:\\.\\w+)*",
                   "name": "variable.other.assignment.go",
                   "captures": {"0": {"patterns": [{"include": "#punctuation"}]}}
