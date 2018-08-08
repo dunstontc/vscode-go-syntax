@@ -532,12 +532,24 @@
         "variable": {
             "patterns": [
                 {
+                    "match": "_",
+                    "name": "variable.other.blank.go"
+                },
+                {
                     "match": "\\w+(?=\\s\\:\\=)",
                     "name": "variable.other.assignment.go"
                 },
                 {
                     "match": "(?<=\\()(?>\\w+)(?=\\))",
                     "name": "variable.other.param.go"
+                },
+                {
+                    "match": "(?<=\\*)\\w+",
+                    "name": "variable.other.pointer.go"
+                },
+                {
+                    "match": "(?<=\\&)(?>\\w+)",
+                    "name": "variable.other.address.go"
                 },
                 {
                     "match": "(?<!var)\\s*(\\w+(?:\\.\\w+)*(?>,\\s*\\w+(?:\\.\\w+)*)*)(?=\\s*=(?!=))",

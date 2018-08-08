@@ -1,6 +1,10 @@
 # Change Log
 
 
+## 0.0.3 
+- Highlight pointers & addresses as variables.
+- Improve highlighting for blank identifiers.
+
 ## 0.0.2 
 - Define `_` as *variable.other.blank.go*.
 - Start work on improved param highlighting.
