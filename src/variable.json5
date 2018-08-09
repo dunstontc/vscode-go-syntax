@@ -11,6 +11,20 @@
           "name": "variable.other.assignment.go",
         },
         {
+          "match": "(\\w+)(,)\\s([a-zA-Z]+)(?=\\s\\:\\=)",
+          "captures": {
+            "1": { "name": "variable.other.assignment.go" },
+            "2": { "name": "punctuation.other.comma.go" },
+            "3": { "name": "variable.other.assignment.go" },
+          },
+          "patterns":[
+            {
+              "match": "_",
+              "name": "variable.other.blank.go",
+            },
+          ]
+        },
+        {
           "match": "(?<=\\()(?>\\w+)(?=\\))",
           "name": "variable.other.param.go",
         },

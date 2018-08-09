@@ -13,6 +13,7 @@
               "patterns": [
                 {"include": "#brackets"},
                 {"include": "#operators"},
+                {"include": "#variable"},
               ]
             },
             "3": {
@@ -34,18 +35,16 @@
           "match": "(\\bfunc\\b)|(\\w+)(?=\\()",
           "captures": {
             "1": {"name": "keyword.function.go"},
-            "2": {
-              "patterns": [
-                {
-                  "match": "\\d\\w*",
-                  "name": "invalid.illegal.identifier.go"
-                },
-                {
-                  "match": "\\w+",
-                  "name": "support.function.go"
-                }
-              ]
-            }
+            "2": {"patterns": [
+              {
+                "match": "\\d\\w*",
+                "name": "invalid.illegal.identifier.go"
+              },
+              {
+                "match": "\\w+",
+                "name": "support.function.go"
+              },
+            ]}
           }
         },
         {
@@ -78,6 +77,10 @@
             }
           ]
         },
+        {
+          "match": "(?!struct)(?>\\w+)(?=\\{)",
+          "name": "entity.name.type.struct.go",
+        }
       ]
     }
   }

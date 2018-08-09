@@ -2,6 +2,10 @@
 
 
 ## 0.0.3 
+- Highlight more variables.
+- Highlight struct names as *entity.name.type.struct.go*
+
+## 0.0.3 
 - Highlight pointers & addresses as variables.
 - Improve highlighting for blank identifiers.
 
