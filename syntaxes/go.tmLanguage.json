@@ -249,7 +249,7 @@
                     ]
                 },
                 {
-                    "match": "(?!struct)(?>\\w+)(?=\\{)",
+                    "match": "(?!interface|struct)(?>\\w+)(?=\\{)",
                     "name": "entity.name.type.struct.go"
                 }
             ]

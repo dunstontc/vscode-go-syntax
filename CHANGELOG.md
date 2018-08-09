@@ -1,7 +1,11 @@
 # Change Log
 
 
-## 0.0.3 
+## 0.0.5 
+- Fix issue with incorrect keyword highlighting.
+
+
+## 0.0.4
 - Highlight more variables.
 - Highlight struct names as *entity.name.type.struct.go*
 
