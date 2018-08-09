@@ -1,9 +1,11 @@
 # Change Log
 
 
+## 0.0.6
+- Improve type highlighting.
+
 ## 0.0.5 
 - Fix issue with incorrect keyword highlighting.
-
 
 ## 0.0.4
 - Highlight more variables.

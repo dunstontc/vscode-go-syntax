@@ -251,6 +251,10 @@
                 {
                     "match": "(?!interface|struct)(?>\\w+)(?=\\{)",
                     "name": "entity.name.type.struct.go"
+                },
+                {
+                    "match": "(?<=\\[\\])(?>\\w+)",
+                    "name": "entity.name.type.go"
                 }
             ]
         },
