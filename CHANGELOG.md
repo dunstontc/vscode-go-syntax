@@ -1,6 +1,9 @@
 # Change Log
 
 
+## 0.0.9
+- Highlight custom types in variable declarations.
+
 ## 0.0.8
 - Improve receiver highlighting.
 

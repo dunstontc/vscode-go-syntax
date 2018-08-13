@@ -286,10 +286,6 @@
                     "name": "keyword.control.go"
                 },
                 {
-                    "match": "\\bvar\\b",
-                    "name": "keyword.var.go"
-                },
-                {
                     "match": "\\bchan\\b",
                     "name": "keyword.channel.go"
                 },
@@ -559,6 +555,20 @@
         },
         "variable": {
             "patterns": [
+                {
+                    "match": "\\b(var)\\s+(\\w+)\\s+(?:\\[\\])?(\\w+)",
+                    "captures": {
+                        "1": {
+                            "name": "keyword.var.go"
+                        },
+                        "2": {
+                            "name": "variable.other.declaration.go"
+                        },
+                        "3": {
+                            "name": "entity.name.type.go"
+                        }
+                    }
+                },
                 {
                     "match": "_",
                     "name": "variable.other.blank.go"

@@ -7,10 +7,10 @@
 					"match": "\\b(break|case|continue|default|defer|else|fallthrough|for|go|goto|if|range|return|select|switch)\\b",
 					"name": "keyword.control.go"
 				},
-				{
-					"match": "\\bvar\\b",
-					"name": "keyword.var.go"
-				},
+				// {
+				// 	"match": "\\bvar\\b",
+				// 	"name": "keyword.var.go"
+				// },
 				{
 					"match": "\\bchan\\b",
 					"name": "keyword.channel.go"
