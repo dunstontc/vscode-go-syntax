@@ -1,6 +1,9 @@
 # Change Log
 
 
+## 0.0.8
+- Improve receiver highlighting.
+
 ## 0.0.7
 - Improve type highlighting.
 - Highlight receivers.

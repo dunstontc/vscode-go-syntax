@@ -3,7 +3,7 @@
     "entity": {
       "patterns": [
         {
-          "match": "^(\\bfunc\\b)\\s\\(([a-z])\\s(\\*)?([a-zA-Z]+)\\)",
+          "match": "^(\\bfunc\\b)\\s\\(([a-z]+)\\s(\\*)?([a-zA-Z]+)\\)",
           "captures": {
             "1": {"name": "keyword.function.go"},
             "2": {"name": "variable.other.receiver.go"},
