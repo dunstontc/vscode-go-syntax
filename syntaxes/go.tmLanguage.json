@@ -156,6 +156,23 @@
         "entity": {
             "patterns": [
                 {
+                    "match": "^(\\bfunc\\b)\\s\\(([a-z])\\s(\\*)?([a-zA-Z]+)\\)",
+                    "captures": {
+                        "1": {
+                            "name": "keyword.function.go"
+                        },
+                        "2": {
+                            "name": "variable.other.receiver.go"
+                        },
+                        "3": {
+                            "name": "keyword.operator.address.go"
+                        },
+                        "4": {
+                            "name": "entity.name.type.receiver.go"
+                        }
+                    }
+                },
+                {
                     "comment": "Function declarations",
                     "match": "^(\\bfunc\\b)(?:\\s+(\\([^\\)]+\\)\\s+)?(\\w+)(?=\\())?",
                     "captures": {

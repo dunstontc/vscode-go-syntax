@@ -118,6 +118,14 @@
           "end": "(?!\\G)",
           "patterns": [{"include": "$self"}]
         },
+        // {
+        //   "match": "(var)(\\s\\w+)\\s(\\w+)",
+        //   "captures": {
+        //     "1": {"name": "keyword.var.go"},
+        //     "2": {"name": "variable.other.go"},
+        //     "3": {"name": "entity.name.type.go"},
+        //   },
+        // },
 			]
 		}
   }
