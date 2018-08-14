@@ -2,13 +2,23 @@
   "repository": {
     "entity": {
       "patterns": [
+        // {
+        //   "match": "^(\\bfunc\\b)\\s\\(([a-z]+)\\s(\\*)?([a-zA-Z]+)\\)",
+        //   "captures": {
+        //     "1": {"name": "keyword.function.go"},
+        //     "2": {"name": "variable.other.receiver.go"},
+        //     "3": {"name": "keyword.operator.address.go"},
+        //     "4": {"name": "entity.name.type.receiver.go"},
+        //   }
+        // },
         {
-          "match": "^(\\bfunc\\b)\\s\\(([a-z]+)\\s(\\*)?([a-zA-Z]+)\\)",
+          "match": "^(\\bfunc\\b)\\s(\\w+)?\\(([a-z]+)\\s(\\*)?([a-zA-Z]+)\\)",
           "captures": {
             "1": {"name": "keyword.function.go"},
-            "2": {"name": "variable.other.receiver.go"},
-            "3": {"name": "keyword.operator.address.go"},
-            "4": {"name": "entity.name.type.receiver.go"},
+            "2": {"name": "entity.name.function.go"},
+            "3": {"name": "variable.other.receiver.go"},
+            "4": {"name": "keyword.operator.address.go"},
+            "5": {"name": "entity.name.type.receiver.go"},
           }
         },
         // ====================================================================
@@ -16,9 +26,7 @@
           "comment": "Function declarations",
           "match": "^(\\bfunc\\b)(?:\\s+(\\([^\\)]+\\)\\s+)?(\\w+)(?=\\())?",
           "captures": {
-            "1": {
-              "name": "keyword.function.go"
-            },
+            "1": {"name": "keyword.function.go"},
             "2": {
               "patterns": [
                 {"include": "#brackets"},

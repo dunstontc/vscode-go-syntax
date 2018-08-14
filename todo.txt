@@ -1,0 +1,4 @@
+2018-08-14 Variables in for loops.
+2018-08-14 Rename "variable.other.blank.go" to "constant.language.blank.go"?
+2018-08-14 Regex highlights.
+2018-08-14 Multiple return types.

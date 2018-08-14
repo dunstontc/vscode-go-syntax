@@ -156,18 +156,21 @@
         "entity": {
             "patterns": [
                 {
-                    "match": "^(\\bfunc\\b)\\s\\(([a-z]+)\\s(\\*)?([a-zA-Z]+)\\)",
+                    "match": "^(\\bfunc\\b)\\s(\\w+)?\\(([a-z]+)\\s(\\*)?([a-zA-Z]+)\\)",
                     "captures": {
                         "1": {
                             "name": "keyword.function.go"
                         },
                         "2": {
-                            "name": "variable.other.receiver.go"
+                            "name": "entity.name.function.go"
                         },
                         "3": {
-                            "name": "keyword.operator.address.go"
+                            "name": "variable.other.receiver.go"
                         },
                         "4": {
+                            "name": "keyword.operator.address.go"
+                        },
+                        "5": {
                             "name": "entity.name.type.receiver.go"
                         }
                     }
@@ -411,25 +414,6 @@
                     ]
                 },
                 {
-                    "begin": "\\(",
-                    "beginCaptures": {
-                        "0": {
-                            "name": "punctuation.definition.begin.bracket.round.go"
-                        }
-                    },
-                    "end": "\\)",
-                    "endCaptures": {
-                        "0": {
-                            "name": "punctuation.definition.end.bracket.round.go"
-                        }
-                    },
-                    "patterns": [
-                        {
-                            "include": "$self"
-                        }
-                    ]
-                },
-                {
                     "match": "\\[|\\]",
                     "name": "punctuation.definition.bracket.square.go"
                 }
@@ -570,12 +554,42 @@
                     }
                 },
                 {
+                    "match": "\\b(var)\\s+(\\w+)\\s+(\\=)",
+                    "captures": {
+                        "1": {
+                            "name": "keyword.var.go"
+                        },
+                        "2": {
+                            "name": "variable.other.declaration.go"
+                        },
+                        "3": {
+                            "name": "keyword.operator.assignment.go"
+                        }
+                    }
+                },
+                {
+                    "match": "([a-zA-Z]+)(?=\\[)",
+                    "name": "variable.other.accessor.go"
+                },
+                {
+                    "match": "\\b(var)\\b",
+                    "name": "keyword.var.go"
+                },
+                {
                     "match": "_",
                     "name": "variable.other.blank.go"
                 },
                 {
                     "match": "\\w+(?=\\s\\:\\=)",
                     "name": "variable.other.assignment.go"
+                },
+                {
+                    "match": "(?<=\\*)\\w+",
+                    "name": "variable.other.pointer.go"
+                },
+                {
+                    "match": "(?<=\\&)(?>\\w+)",
+                    "name": "variable.other.address.go"
                 },
                 {
                     "match": "(\\w+)(,)\\s([a-zA-Z]+)(?=\\s\\:\\=)",
@@ -598,16 +612,17 @@
                     ]
                 },
                 {
-                    "match": "(?<=\\()(?>\\w+)(?=\\))",
-                    "name": "variable.other.param.go"
-                },
-                {
-                    "match": "(?<=\\*)\\w+",
-                    "name": "variable.other.pointer.go"
-                },
-                {
-                    "match": "(?<=\\&)(?>\\w+)",
-                    "name": "variable.other.address.go"
+                    "begin": "(?<=\\w)\\(",
+                    "end": "\\)",
+                    "patterns": [
+                        {
+                            "include": "$self"
+                        },
+                        {
+                            "match": "(?<!\\[)\\b(?>[a-zA-Z]+)\\b(?!\\])",
+                            "name": "variable.other.arg.go"
+                        }
+                    ]
                 },
                 {
                     "match": "(?<!var)\\s*(\\w+(?:\\.\\w+)*(?>,\\s*\\w+(?:\\.\\w+)*)*)(?=\\s*=(?!=))",
@@ -643,6 +658,7 @@
                     }
                 },
                 {
+                    "comment": "Struct fields",
                     "match": "(\\w+(?:,\\s*\\w+)*)(\\s+\\*?\\w+(?:\\.\\w+)?\\s*)?(?=\\s*=)",
                     "captures": {
                         "1": {

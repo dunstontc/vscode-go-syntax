@@ -1,6 +1,11 @@
 # Change Log
 
 
+## 0.0.10
+- Highlight variable indexing (`x[n]`).
+- *Improvements* to variable highlighting.
+- Add items to todo.txt.
+
 ## 0.0.9
 - Highlight custom types in variable declarations.
 

@@ -17,6 +17,10 @@
           "match": "\\b(true|false|nil|iota)\\b",
           "name": "constant.language.go",
         },
+        // {
+        //   "match": "_",
+        //   "name": "constant.language.blank.go",
+        // },
       ]
     }
   }

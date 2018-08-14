@@ -8,7 +8,7 @@
 					"name": "keyword.control.go"
 				},
 				// {
-				// 	"match": "\\bvar\\b",
+				// 	"match": "\\b(var)\\b",
 				// 	"name": "keyword.var.go"
 				// },
 				{
