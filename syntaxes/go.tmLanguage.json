@@ -636,7 +636,7 @@
                             "include": "$self"
                         },
                         {
-                            "match": "(?<!\\[)\\b(?>[a-zA-Z]+)\\b(?!\\])",
+                            "match": "(?<!\\[)\\b(?>[a-zA-Z]+)\\b(?!\\]|\\.)",
                             "name": "variable.other.arg.go"
                         }
                     ]

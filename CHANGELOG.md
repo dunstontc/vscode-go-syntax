@@ -1,6 +1,9 @@
 # Change Log
 
 
+## 0.0.12
+- Improved highlighting for function arguments.
+
 ## 0.0.11
 - Fix highlighting for types using dot notation in variable declarations (`var wg sync.WaitGroup`).
 
