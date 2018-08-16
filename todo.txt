@@ -2,3 +2,4 @@
 2018-08-14 Rename "variable.other.blank.go" to "constant.language.blank.go"?
 2018-08-14 Regex highlights.
 2018-08-14 Multiple return types.
+2018-08-16 Add line end matches for variable declarations.
