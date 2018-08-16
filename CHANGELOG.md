@@ -1,6 +1,9 @@
 # Change Log
 
 
+## 0.0.11
+- Fix highlighting for types using dot notation in variable declarations (`var wg sync.WaitGroup`).
+
 ## 0.0.10
 - Highlight variable indexing (`x[n]`).
 - *Improvements* to variable highlighting.

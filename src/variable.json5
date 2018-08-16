@@ -3,6 +3,15 @@
     "variable": {
 			"patterns": [
         {
+          "match": "\\b(var)\\s+(\\w+)\\s+(?:\\[\\])?(?:\\w+(\\.))+?(\\w+)",
+          "captures": {
+            "1": { "name": "keyword.var.go" },
+            "2": { "name": "variable.other.declaration.go" },
+            "3": { "name": "punctuation.other.period.go" },
+            "4": { "name": "entity.name.type.go" },
+          },
+        },
+        {
           "match": "\\b(var)\\s+(\\w+)\\s+(?:\\[\\])?(\\w+)",
           "captures": {
             "1": { "name": "keyword.var.go" },
