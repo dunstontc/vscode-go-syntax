@@ -28,8 +28,8 @@
           },
         },
         {
-          "match": "([a-zA-Z]+)(?=\\[)",
-          "name": "variable.other.accessor.go"
+          "match": "\\b(?>[a-zA-Z](?:\\w+)?)\\b(?=\\[)",
+          "name": "variable.other.accessor.go",
         },
         {
 					"match": "\\b(var)\\b",
@@ -67,7 +67,7 @@
         },
         // ====================================================================
         {
-          "match": "(\\w+)(,)\\s([a-zA-Z]+)(?=\\s\\:\\=)",
+          "match": "(\\w+)(,)\\s\\b(?>[a-zA-Z](?:\\w+)?)\\b(?=\\s\\:\\=)",
           "captures": {
             "1": { "name": "variable.other.assignment.go" },
             "2": { "name": "punctuation.other.comma.go" },
@@ -80,10 +80,6 @@
             },
           ]
         },
-        // {
-        //   "match": "(?<=\\()(?>\\w+)(?=\\))",
-        //   "name": "variable.other.param.go",
-        // },
         {
 
           "begin": "(?<=\\w)\\(",
@@ -91,8 +87,12 @@
           "end": "\\)",
           "patterns": [
             {"include": "$self"},
+            // {
+            //   "match": "(?<!\\[)\\b(?>[a-zA-Z])\\b(?!\\]|\\.)",
+            //   "name": "variable.other.arg.go",
+            // },
             {
-              "match": "(?<!\\[)\\b(?>[a-zA-Z]+)\\b(?!\\]|\\.)",
+              "match": "(?<!\\[)\\b(?>[a-zA-Z](?:\\w+)?)\\b(?!\\]|\\.)",
               "name": "variable.other.arg.go",
             },
           ],

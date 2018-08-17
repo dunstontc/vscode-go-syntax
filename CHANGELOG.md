@@ -1,6 +1,9 @@
 # Change Log
 
 
+## 0.0.14 *(August 17, 2018)*
+- Highlight variables including (but not starting with) numbers.
+
 ## 0.0.13 *(August 17, 2018)*
 - Highlight channels as variables.
 - Highlight incremented/decremented values as variables.

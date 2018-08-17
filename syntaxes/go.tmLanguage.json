@@ -585,7 +585,7 @@
                     }
                 },
                 {
-                    "match": "([a-zA-Z]+)(?=\\[)",
+                    "match": "\\b(?>[a-zA-Z](?:\\w+)?)\\b(?=\\[)",
                     "name": "variable.other.accessor.go"
                 },
                 {
@@ -623,7 +623,7 @@
                     "name": "variable.other.go"
                 },
                 {
-                    "match": "(\\w+)(,)\\s([a-zA-Z]+)(?=\\s\\:\\=)",
+                    "match": "(\\w+)(,)\\s\\b(?>[a-zA-Z](?:\\w+)?)\\b(?=\\s\\:\\=)",
                     "captures": {
                         "1": {
                             "name": "variable.other.assignment.go"
@@ -650,7 +650,7 @@
                             "include": "$self"
                         },
                         {
-                            "match": "(?<!\\[)\\b(?>[a-zA-Z]+)\\b(?!\\]|\\.)",
+                            "match": "(?<!\\[)\\b(?>[a-zA-Z](?:\\w+)?)\\b(?!\\]|\\.)",
                             "name": "variable.other.arg.go"
                         }
                     ]
