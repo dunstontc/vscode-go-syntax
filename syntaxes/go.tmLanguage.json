@@ -609,6 +609,20 @@
                     "name": "variable.other.address.go"
                 },
                 {
+                    "match": "(?>\\w+)(?=\\s?<-)",
+                    "name": "variable.other.channel.go"
+                },
+                {
+                    "comment": "increment",
+                    "match": "(?>\\w+)(?=\\+\\+)",
+                    "name": "variable.other.go"
+                },
+                {
+                    "comment": "decrement",
+                    "match": "(?>\\w+)(?=\\-\\-)",
+                    "name": "variable.other.go"
+                },
+                {
                     "match": "(\\w+)(,)\\s([a-zA-Z]+)(?=\\s\\:\\=)",
                     "captures": {
                         "1": {
