@@ -1,6 +1,9 @@
 # Change Log
 
 
+## 0.0.15 *(August 17, 2018)*
+- Add initial support for templates.
+
 ## 0.0.14 *(August 17, 2018)*
 - Highlight variables including (but not starting with) numbers.
 

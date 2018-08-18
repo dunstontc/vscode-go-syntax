@@ -1,0 +1,10 @@
+{
+  "fileTypes": ["gojson"],
+  "name": "GoSublime: JSON",
+  "patterns": [
+    {"include": "source.json"},
+    {"include": "source.gotemplate"}
+  ],
+  "scopeName": "source.gojson",
+  "uuid": "e256ab58-6e47-11e8-adc0-fa7ae01bbebc"
+}

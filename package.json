@@ -2,7 +2,7 @@
     "name": "vscode-go-syntax",
     "displayName": "vscode-go-syntax",
     "description": "Syntax highlighting for Go (WIP)",
-    "version": "0.0.14",
+    "version": "0.0.15",
     "publisher": "dunstontc",
     "repository": {
         "type": "git",
@@ -19,6 +19,12 @@
                 "aliases": ["go"],
                 "extensions": [".go"],
                 "configuration": "./config/go-config.json"
+            },
+            {
+                "id": "GoHTML",
+                "aliases": ["gohtml"],
+                "extensions": [".gohtml"],
+                "configuration": "./config/go-config.json"
             }
         ],
         "grammars": [
@@ -26,6 +32,11 @@
                 "language": "Go",
                 "scopeName": "source.go",
                 "path": "./syntaxes/go.tmLanguage.json"
+            },
+            {
+                "language": "GoHTML",
+                "scopeName": "source.gohtml",
+                "path": "./syntaxes/gohtml.tmLanguage.json"
             }
         ]
     },
