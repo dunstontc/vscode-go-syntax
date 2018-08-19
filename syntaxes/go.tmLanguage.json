@@ -334,10 +334,6 @@
             "comment": "Note that the order here is very important!",
             "patterns": [
                 {
-                    "match": "(\\*|&)(?=\\w)",
-                    "name": "keyword.operator.address.go"
-                },
-                {
                     "match": "<\\-",
                     "name": "keyword.operator.channel.go"
                 },
@@ -473,6 +469,9 @@
                         },
                         {
                             "include": "#string_placeholder"
+                        },
+                        {
+                            "include": "source.gotemplate"
                         }
                     ]
                 },
@@ -494,6 +493,9 @@
                     "patterns": [
                         {
                             "include": "#string_placeholder"
+                        },
+                        {
+                            "include": "source.gotemplate"
                         }
                     ]
                 },

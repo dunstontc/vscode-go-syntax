@@ -12,6 +12,7 @@
           "patterns": [
             {"include": "#string_escaped_char"},
             {"include": "#string_placeholder"},
+            {"include": "source.gotemplate"},
           ]
         },
         {
@@ -21,7 +22,10 @@
           "end": "`",
           "endCaptures": {"0": {"name": "punctuation.definition.string.end.go"}},
           "name": "string.quoted.raw.go",
-          "patterns": [{"include": "#string_placeholder"}]
+          "patterns": [
+            {"include": "#string_placeholder"},
+            {"include": "source.gotemplate"},
+          ]
         },
         {
 					"begin": "'",

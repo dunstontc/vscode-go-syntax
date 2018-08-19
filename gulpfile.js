@@ -16,6 +16,18 @@ gulp.task('compile-go', () => {
     .pipe(gulp.dest('./syntaxes'));
 });
 
+gulp.task('compile-gotemplate', () => {
+  gulp.src('./src/gotemplate/*.json5')
+    .pipe(merge({
+      fileName: "gotemplate.tmLanguage.json",
+      json5: true,
+    }))
+    .pipe(json5({
+      beautify: true,
+    }))
+    .pipe(gulp.dest('./syntaxes'));
+});
+
 gulp.task('compile-gohtml', () => {
   gulp.src('./src/gohtml/*.json5')
     .pipe(merge({
@@ -29,5 +41,5 @@ gulp.task('compile-gohtml', () => {
 });
 
 gulp.task('watch', () => {
-  gulp.watch('./src/**/*.json5', [ 'compile-go', 'compile-gohtml' ]);
+  gulp.watch('./src/**/*.json5', [ 'compile-go', 'compile-gohtml', 'compile-gotemplate' ]);
 });

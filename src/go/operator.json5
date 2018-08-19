@@ -3,10 +3,10 @@
 		"operator": {
 			"comment": "Note that the order here is very important!",
 			"patterns": [
-				{
-					"match": "(\\*|&)(?=\\w)",
-					"name": "keyword.operator.address.go"
-				},
+				// {
+				// 	"match": "\\s(\\*|&)(?=\\w)",
+				// 	"name": "keyword.operator.address.go"
+				// },
 				{
 					"match": "<\\-",
 					"name": "keyword.operator.channel.go"

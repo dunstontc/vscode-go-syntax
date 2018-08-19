@@ -21,10 +21,18 @@
                 "configuration": "./config/go-config.json"
             },
             {
+              "id": "GoTemplate",
+              "aliases": [
+                  "gotemplate"
+              ],
+              "extensions": [".gotmpl"],
+              "configuration": "./config/gotemplate-config.json"
+          },
+            {
                 "id": "GoHTML",
                 "aliases": ["gohtml"],
                 "extensions": [".gohtml"],
-                "configuration": "./config/go-config.json"
+                "configuration": "./config/gohtml-config.json"
             }
         ],
         "grammars": [
@@ -32,6 +40,11 @@
                 "language": "Go",
                 "scopeName": "source.go",
                 "path": "./syntaxes/go.tmLanguage.json"
+            },
+            {
+                "language": "GoTemplate",
+                "scopeName": "source.gotemplate",
+                "path": "./syntaxes/gotemplate.tmLanguage.json"
             },
             {
                 "language": "GoHTML",

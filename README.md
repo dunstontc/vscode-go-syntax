@@ -11,6 +11,9 @@
   - [casualjim/vscode-gotemplate](https://github.com/casualjim/vscode-gotemplate)
   - [Microsoft/vscode-go](https://github.com/Microsoft/vscode-go)
   - [Default Language Definition](https://github.com/Microsoft/vscode/tree/master/extensions/go/syntaxes)
+  - Docs:
+    - [golang.org/ref/spec](https://golang.org/ref/spec)
+    - [golang.org/pkg/builtin](https://golang.org/pkg/builtin)
 
   
 ## [License](https://github.com/dunstontc/vscode-go-syntax/blob/master/LICENSE)
