@@ -1,8 +1,8 @@
 # Change Log
 
 
-## 0.0.16 *(August 17, 2018)*
-- 
+## 0.0.16 *(August 18, 2018)*
+- Fix comments for GoHTML files.
 
 ## 0.0.15 *(August 17, 2018)*
 - Add initial support for templates.
