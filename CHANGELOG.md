@@ -1,6 +1,9 @@
 # Change Log
 
 
+## 0.0.17 *(August 20, 2018)*
+- 
+
 ## 0.0.16 *(August 19, 2018)*
 - Fix comments for GoHTML files.
 - Address [Issue #2](https://github.com/dunstontc/vscode-go-syntax/issues/2) regarding `map` keyword highlighting.
