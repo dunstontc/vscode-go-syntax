@@ -29,6 +29,38 @@
             "3": {"name": "entity.name.type.go"},
           }
         },
+        {
+          // "match": "^(\\bfunc\\b)\\s(\\w+)",
+          "comment": "Function Definitions",
+          "begin": "^(\\bfunc\\b)\\s(\\w+)",
+          "beginCaptures": {
+            "1": {"name": "keyword.function.go"},
+            "2": {"name": "entity.name.function.go"},
+          },
+          "end": "\\{",
+          "patterns":[
+            {
+              "match": "(\\*)\\w+(\\.)(\\w+)",
+              "captures": {
+                "1": {"name": "keyword.operator.address.go"},
+                "2": {"name": "punctuation.other.period.go"},
+                "3": {"name": "entity.name.type.go"},
+              }
+            },
+            {
+              "match": "(?<=http\\.)(\\w+)",
+              "name": "entity.name.type.param.go"
+            },
+            // {
+            //   "match": "(?<=\\.)(?>[a-zA-Z]+\\w*)",
+            //   "name": "entity.name.type.param.go",
+            //   // "captures": {
+            //   //   "2": {"name": "entity.name.type.param.go"},
+            //   // }
+            // },
+            {"include": "$self"},
+          ],
+        },
         // ====================================================================
         {
           "comment": "Function declarations",
@@ -103,6 +135,7 @@
             }
           ]
         },
+        // ====================================================================
         {
           "match": "(?!interface|struct)(?>\\w+)(?=\\{)",
           "name": "entity.name.type.struct.go",

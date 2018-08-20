@@ -65,30 +65,25 @@
           "match": "(?>\\w+)(?=\\-\\-)",
           "name": "variable.other.go",
         },
-        // ====================================================================
         {
-          "match": "(\\w+)(,)\\s\\b(?>[a-zA-Z](?:\\w+)?)\\b(?=\\s\\:\\=)",
+          "match": "(\\w+)(,)\\s(\\w+)\\s(\\:\\=)",
           "captures": {
             "1": { "name": "variable.other.assignment.go" },
             "2": { "name": "punctuation.other.comma.go" },
             "3": { "name": "variable.other.assignment.go" },
+            "4": { "name": "keyword.operator.assignment.go" },
           },
-          "patterns":[
-            {
-              "match": "_",
-              "name": "variable.other.blank.go",
-            },
-          ]
         },
+        // ====================================================================
         {
 
           "begin": "(?<=\\w)\\(",
           // "beginCaptures": {"1": {"name": "entity.name.function.go"}},
-          "end": "\\)",
+          "end": "\\)|$",
           "patterns": [
             {"include": "$self"},
             // {
-            //   "match": "(?<!\\[)\\b(?>[a-zA-Z])\\b(?!\\]|\\.)",
+            //   "match": "(?<=\\w\\.)(\\w+)",
             //   "name": "variable.other.arg.go",
             // },
             {
@@ -149,10 +144,14 @@
 									"match": "\\d\\w*",
 									"name": "invalid.illegal.identifier.go"
 								},
+                {
+                  "match": "(?<=\\.)(\\w+)",
+                  "name": "entity.name.type.go",
+                },
 								{
 									"match": "\\w+",
 									"name": "variable.other.declaration.go"
-								},
+                },
 								{"include": "#punctuation"}
 							]
 						},

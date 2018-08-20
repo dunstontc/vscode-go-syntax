@@ -2,7 +2,8 @@
 
 
 ## 0.0.17 *(August 20, 2018)*
-- 
+- Improved highlighting for pointer operators (`*`/`&`).
+- Testing improvements for parameter type highlighting.
 
 ## 0.0.16 *(August 19, 2018)*
 - Fix comments for GoHTML files.

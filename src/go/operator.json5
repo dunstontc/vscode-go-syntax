@@ -4,7 +4,11 @@
 			"comment": "Note that the order here is very important!",
 			"patterns": [
 				{
-					"match": "(\\*|&)(?=\\w)",
+					"match": "(&)(?=\\w)",
+					"name": "keyword.operator.pointer.go"
+				},
+				{
+					"match": "(?<=\\s|\\()(\\*)(?=\\w)",
 					"name": "keyword.operator.pointer.go"
 				},
 				{

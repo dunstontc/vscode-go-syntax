@@ -189,6 +189,42 @@
                     }
                 },
                 {
+                    "comment": "Function Definitions",
+                    "begin": "^(\\bfunc\\b)\\s(\\w+)",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "keyword.function.go"
+                        },
+                        "2": {
+                            "name": "entity.name.function.go"
+                        }
+                    },
+                    "end": "\\{",
+                    "patterns": [
+                        {
+                            "match": "(\\*)\\w+(\\.)(\\w+)",
+                            "captures": {
+                                "1": {
+                                    "name": "keyword.operator.address.go"
+                                },
+                                "2": {
+                                    "name": "punctuation.other.period.go"
+                                },
+                                "3": {
+                                    "name": "entity.name.type.go"
+                                }
+                            }
+                        },
+                        {
+                            "match": "(?<=http\\.)(\\w+)",
+                            "name": "entity.name.type.param.go"
+                        },
+                        {
+                            "include": "$self"
+                        }
+                    ]
+                },
+                {
                     "comment": "Function declarations",
                     "match": "^(\\bfunc\\b)(?:\\s+(\\([^\\)]+\\)\\s+)?(\\w+)(?=\\())?",
                     "captures": {
@@ -403,7 +439,7 @@
                             "name": "punctuation.definition.begin.bracket.square.go"
                         }
                     },
-                    "end": "\\]\\b|$",
+                    "end": "\\]",
                     "endCaptures": {
                         "0": {
                             "name": "punctuation.definition.end.bracket.square.go"
@@ -426,7 +462,11 @@
             "comment": "Note that the order here is very important!",
             "patterns": [
                 {
-                    "match": "(\\*|&)(?=\\w)",
+                    "match": "(&)(?=\\w)",
+                    "name": "keyword.operator.pointer.go"
+                },
+                {
+                    "match": "(?<=\\s|\\()(\\*)(?=\\w)",
                     "name": "keyword.operator.pointer.go"
                 },
                 {
@@ -716,7 +756,7 @@
                     "name": "variable.other.go"
                 },
                 {
-                    "match": "(\\w+)(,)\\s\\b(?>[a-zA-Z](?:\\w+)?)\\b(?=\\s\\:\\=)",
+                    "match": "(\\w+)(,)\\s(\\w+)\\s(\\:\\=)",
                     "captures": {
                         "1": {
                             "name": "variable.other.assignment.go"
@@ -726,18 +766,15 @@
                         },
                         "3": {
                             "name": "variable.other.assignment.go"
+                        },
+                        "4": {
+                            "name": "keyword.operator.assignment.go"
                         }
-                    },
-                    "patterns": [
-                        {
-                            "match": "_",
-                            "name": "variable.other.blank.go"
-                        }
-                    ]
+                    }
                 },
                 {
                     "begin": "(?<=\\w)\\(",
-                    "end": "\\)",
+                    "end": "\\)|$",
                     "patterns": [
                         {
                             "include": "$self"
@@ -817,6 +854,10 @@
                                 {
                                     "match": "\\d\\w*",
                                     "name": "invalid.illegal.identifier.go"
+                                },
+                                {
+                                    "match": "(?<=\\.)(\\w+)",
+                                    "name": "entity.name.type.go"
                                 },
                                 {
                                     "match": "\\w+",
