@@ -3,3 +3,6 @@
 2018-08-14 Regex highlights.
 2018-08-14 Multiple return types.
 2018-08-16 Add line end matches for variable declarations.
+2018-08-19 Anonymous Structs.
+2018-08-19 ISSUE #1
+2018-08-19 ISSUE #2
