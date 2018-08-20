@@ -21,6 +21,14 @@
             "5": {"name": "entity.name.type.receiver.go"},
           }
         },
+        {
+          "match": "(\\*)\\w+(\\.)(\\w+)",
+          "captures": {
+            "1": {"name": "keyword.operator.address.go"},
+            "2": {"name": "punctuation.other.period.go"},
+            "3": {"name": "entity.name.type.go"},
+          }
+        },
         // ====================================================================
         {
           "comment": "Function declarations",
@@ -102,6 +110,15 @@
         {
           "match": "(?<=\\[\\])(?>\\w+)",
           "name": "entity.name.type.go",
+        },
+        {
+          "match": "(chan)\\s(\\*)(?>\\w+)",
+          "name": "entity.name.type.go",
+          "captures": {
+            "1": {"name": "keyword.channel.go"},
+            "2": {"name": "keyword.operator.pointer.go"},
+            "3": {"name": "entity.name.type.channel.go"},
+          }
         },
       ]
     }

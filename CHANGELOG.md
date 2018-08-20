@@ -1,8 +1,13 @@
 # Change Log
 
 
-## 0.0.16 *(August 18, 2018)*
+## 0.0.16 *(August 19, 2018)*
 - Fix comments for GoHTML files.
+- Address [Issue #2](https://github.com/dunstontc/vscode-go-syntax/issues/2) regarding `map` keyword highlighting.
+- Highlight types in channel declarations.
+- Improve highlighting for types in variable declarations.
+- Improve highlighting for struct definitions.
+- Improved patterns for matching `*` (*keyword.operator.pointer.go* & *keyword.operator.arithmetic.go*)
 
 ## 0.0.15 *(August 17, 2018)*
 - Add initial support for templates.

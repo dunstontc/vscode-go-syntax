@@ -12,7 +12,7 @@
           },
         },
         {
-          "match": "\\b(var)\\s+(\\w+)\\s+(?:\\[\\])?(\\w+)",
+          "match": "\\b(var)\\s+(\\w+)\\s+(?:\\[\\])?(?!map)(\\w+)",
           "captures": {
             "1": { "name": "keyword.var.go" },
             "2": { "name": "variable.other.declaration.go" },

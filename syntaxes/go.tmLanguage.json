@@ -175,6 +175,20 @@
                     }
                 },
                 {
+                    "match": "(\\*)\\w+(\\.)(\\w+)",
+                    "captures": {
+                        "1": {
+                            "name": "keyword.operator.address.go"
+                        },
+                        "2": {
+                            "name": "punctuation.other.period.go"
+                        },
+                        "3": {
+                            "name": "entity.name.type.go"
+                        }
+                    }
+                },
+                {
                     "comment": "Function declarations",
                     "match": "^(\\bfunc\\b)(?:\\s+(\\([^\\)]+\\)\\s+)?(\\w+)(?=\\())?",
                     "captures": {
@@ -274,6 +288,21 @@
                 {
                     "match": "(?<=\\[\\])(?>\\w+)",
                     "name": "entity.name.type.go"
+                },
+                {
+                    "match": "(chan)\\s(\\*)(?>\\w+)",
+                    "name": "entity.name.type.go",
+                    "captures": {
+                        "1": {
+                            "name": "keyword.channel.go"
+                        },
+                        "2": {
+                            "name": "keyword.operator.pointer.go"
+                        },
+                        "3": {
+                            "name": "entity.name.type.channel.go"
+                        }
+                    }
                 }
             ]
         },
@@ -328,11 +357,78 @@
             ]
         },
         "meta": {
-            "patterns": []
+            "patterns": [
+                {
+                    "name": "meta.section.struct.go",
+                    "begin": "\\s(struct)\\s(\\{)",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "keyword.struct.go"
+                        },
+                        "2": {
+                            "name": "punctuation.definition.struct.go"
+                        }
+                    },
+                    "end": "\\}",
+                    "endCaptures": {
+                        "0": {
+                            "name": "punctuation.definition.struct.go"
+                        }
+                    },
+                    "patterns": [
+                        {
+                            "match": "^\\s+\\w+\\s+?(?=\\/|$)",
+                            "name": "entity.name.type.anonymous-field.go"
+                        },
+                        {
+                            "match": "(?:^\\s+)(\\w+)\\s+(\\w+)\\s+?(?=\\/|$)",
+                            "captures": {
+                                "1": {
+                                    "name": "variable.other.field.go"
+                                },
+                                "2": {
+                                    "name": "entity.name.type.go"
+                                }
+                            }
+                        },
+                        {
+                            "include": "$self"
+                        }
+                    ]
+                },
+                {
+                    "begin": "\\[",
+                    "beginCaptures": {
+                        "0": {
+                            "name": "punctuation.definition.begin.bracket.square.go"
+                        }
+                    },
+                    "end": "\\]\\b|$",
+                    "endCaptures": {
+                        "0": {
+                            "name": "punctuation.definition.end.bracket.square.go"
+                        }
+                    },
+                    "name": "meta.section.range.go",
+                    "patterns": [
+                        {
+                            "name": "keyword.operator.slice.go",
+                            "match": "\\:"
+                        },
+                        {
+                            "include": "$self"
+                        }
+                    ]
+                }
+            ]
         },
         "operator": {
             "comment": "Note that the order here is very important!",
             "patterns": [
+                {
+                    "match": "(\\*|&)(?=\\w)",
+                    "name": "keyword.operator.pointer.go"
+                },
                 {
                     "match": "<\\-",
                     "name": "keyword.operator.channel.go"
@@ -362,7 +458,7 @@
                     "name": "keyword.operator.arithmetic.go"
                 },
                 {
-                    "match": "(&(?!\\^)|\\||\\^|&\\^|<<|>>)",
+                    "match": "(\\||\\^|&\\^|<<|>>)",
                     "name": "keyword.operator.arithmetic.bitwise.go"
                 },
                 {
@@ -407,10 +503,6 @@
                             "include": "$self"
                         }
                     ]
-                },
-                {
-                    "match": "\\[|\\]",
-                    "name": "punctuation.definition.bracket.square.go"
                 }
             ]
         },
@@ -558,7 +650,7 @@
                     }
                 },
                 {
-                    "match": "\\b(var)\\s+(\\w+)\\s+(?:\\[\\])?(\\w+)",
+                    "match": "\\b(var)\\s+(\\w+)\\s+(?:\\[\\])?(?!map)(\\w+)",
                     "captures": {
                         "1": {
                             "name": "keyword.var.go"

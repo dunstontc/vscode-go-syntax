@@ -3,10 +3,10 @@
 		"operator": {
 			"comment": "Note that the order here is very important!",
 			"patterns": [
-				// {
-				// 	"match": "\\s(\\*|&)(?=\\w)",
-				// 	"name": "keyword.operator.address.go"
-				// },
+				{
+					"match": "(\\*|&)(?=\\w)",
+					"name": "keyword.operator.pointer.go"
+				},
 				{
 					"match": "<\\-",
 					"name": "keyword.operator.channel.go"
@@ -35,8 +35,12 @@
 					"match": "(\\+|\\-|\\*|/|%)",
 					"name": "keyword.operator.arithmetic.go"
 				},
+				// {
+				// 	"match": "(&(?!\\^)|\\||\\^|&\\^|<<|>>)",
+				// 	"name": "keyword.operator.arithmetic.bitwise.go"
+				// },
 				{
-					"match": "(&(?!\\^)|\\||\\^|&\\^|<<|>>)",
+					"match": "(\\||\\^|&\\^|<<|>>)",
 					"name": "keyword.operator.arithmetic.bitwise.go"
 				},
 				{

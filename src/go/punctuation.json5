@@ -32,10 +32,16 @@
 				// 	"endCaptures": {"0": {"name": "punctuation.definition.end.bracket.round.go"}},
 				// 	"patterns": [{"include": "$self"}]
 				// },
-				{
-					"match": "\\[|\\]",
-					"name": "punctuation.definition.bracket.square.go"
-				}
+				// {
+        //   "begin": "\\[",
+        //   "beginCaptures": {"0": {"name": "punctuation.definition.begin.bracket.square.go"}},
+				// 	"end": "\\]\\b",
+        //   "endCaptures": {"0": {"name": "punctuation.definition.end.bracket.square.go"}},
+        //   "name": "meta.section.range.go",
+        //   "patterns": [
+
+        //   ],
+				// }
       ]
     }
   }
