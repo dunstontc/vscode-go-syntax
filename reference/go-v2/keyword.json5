@@ -1,0 +1,47 @@
+{
+  "repository": {
+    "keyword": {
+			"patterns": [
+				{
+					"comment": "Flow control keywords",
+					"match": "\\b(break|case|continue|default|defer|else|fallthrough|for|go|goto|if|range|return|select|switch)\\b",
+					"name": "keyword.control.go"
+				},
+				// {
+				// 	"match": "\\b(var)\\b",
+				// 	"name": "keyword.var.go"
+				// },
+				{
+					"match": "\\bchan\\b",
+					"name": "keyword.channel.go"
+				},
+				{
+					"match": "\\bconst\\b",
+					"name": "keyword.const.go"
+				},
+				{
+					"match": "\\bfunc\\b",
+					"name": "keyword.function.go"
+				},
+				{
+					"match": "\\binterface\\b",
+					"name": "keyword.interface.go"
+				},
+				{
+					"match": "\\bmap\\b",
+					"name": "keyword.map.go"
+				},
+				{
+					"match": "\\bstruct\\b",
+					"name": "keyword.struct.go"
+        },
+        {
+          "begin": "\\b(import)\\s+",
+          "beginCaptures": {"1": {"name": "keyword.import.go"}},
+          "end": "(?!\\G)",
+          "patterns": [{"include": "#imports"}]
+        },
+			]
+    }
+  }
+}

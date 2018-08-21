@@ -1,0 +1,36 @@
+{
+  "repository": {
+    "storage": {
+      "patterns": [
+				{
+					"match": "\\bbool\\b",
+					"name": "storage.type.boolean.go"
+				},
+				{
+					"match": "\\bbyte\\b",
+					"name": "storage.type.byte.go"
+				},
+				{
+					"match": "\\berror\\b",
+					"name": "storage.type.error.go"
+				},
+				{
+					"match": "\\b(complex(64|128)|float(32|64)|u?int(8|16|32|64)?)\\b",
+					"name": "storage.type.numeric.go"
+				},
+				{
+					"match": "\\brune\\b",
+					"name": "storage.type.rune.go"
+				},
+				{
+					"match": "\\bstring\\b",
+					"name": "storage.type.string.go"
+				},
+				{
+					"match": "\\buintptr\\b",
+					"name": "storage.type.uintptr.go"
+				}
+			]
+    }
+  }
+}

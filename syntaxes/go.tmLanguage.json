@@ -216,10 +216,6 @@
                             }
                         },
                         {
-                            "match": "(?<=http\\.)(\\w+)",
-                            "name": "entity.name.type.param.go"
-                        },
-                        {
                             "include": "$self"
                         }
                     ]

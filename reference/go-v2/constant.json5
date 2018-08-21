@@ -1,0 +1,28 @@
+{
+  "repository": {
+    "constant": {
+      "patterns": [
+        {
+          "comment": "Floating-point literals",
+          "match": "(\\.\\d+([Ee][-+]\\d+)?i?)\\b|\\b\\d+\\.\\d*(([Ee][-+]\\d+)?i?\\b)?",
+          "name": "constant.numeric.floating-point.go",
+        },
+        {
+          "comment": "Integers",
+          "match": "\\b((0x[0-9a-fA-F]+)|(0[0-7]+i?)|(\\d+([Ee]\\d+)?i?)|(\\d+[Ee][-+]\\d+i?))\\b",
+          "name": "constant.numeric.integer.go",
+        },
+        {
+          "comment": "Language constants",
+          "match": "\\b(true|false|nil|iota)\\b",
+          "name": "constant.language.go",
+        },
+        {
+          "match": "\\b(_)\\b",
+          "name": "constant.language.blank-identifier.go",
+          "comment": "https://golang.org/ref/spec#Blank_identifier"
+        },
+      ]
+    }
+  }
+}

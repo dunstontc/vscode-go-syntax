@@ -1,0 +1,24 @@
+{
+  "repository": {
+    "punctuation": {
+      "patterns": [
+        {
+          "match": ";",
+          "name": "punctuation.terminator.go",
+        },
+        {
+					"match": ",",
+					"name": "punctuation.other.comma.go",
+				},
+				{
+					"match": "\\.(?!\\.\\.)",
+					"name": "punctuation.other.period.go",
+				},
+				{
+					"match": ":(?!=)",
+					"name": "punctuation.other.colon.go",
+        },
+      ]
+    }
+  }
+}

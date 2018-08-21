@@ -1,0 +1,65 @@
+{
+	"name": "Go",
+	"scopeName": "source.go",
+	"patterns": [
+    { "include": "#comment" },
+    { "include": "#constant" },
+    { "include": "#entity" },
+    { "include": "#invalid" },
+    { "include": "#keyword" },
+    { "include": "#meta" },
+    { "include": "#operator" },
+    { "include": "#punctuation" },
+    { "include": "#storage" },
+    { "include": "#string" },
+    { "include": "#support" },
+    { "include": "#type" },
+    { "include": "#variable" },
+  ],
+  "repository":{
+    "string_escaped_char": {
+			"patterns": [
+				{
+					"match": "\\\\([0-7]{3}|[abfnrtv\\\\'\"]|x[0-9a-fA-F]{2}|u[0-9a-fA-F]{4}|U[0-9a-fA-F]{8})",
+					"name": "constant.character.escape.go"
+				},
+				{
+					"match": "\\\\[^0-7xuUabfnrtv\\'\"]",
+					"name": "invalid.illegal.unknown-escape.go"
+				}
+			]
+		},
+		"string_placeholder": {
+			"patterns": [
+				{
+					"match": "%(\\[\\d+\\])?([\\+#\\-0\\x20]{,2}((\\d+|\\*)?(\\.?(\\d+|\\*|(\\[\\d+\\])\\*?)?(\\[\\d+\\])?)?))?[vT%tbcdoqxXUbeEfFgGsp]",
+					"name": "constant.other.placeholder.go"
+				}
+			]
+    },
+    "imports": {
+			"patterns": [
+				{
+					"match": "((?!\\s+\")[^\\s]*)?\\s*((\")([^\"]*)(\"))",
+					"captures": {
+						"1": {"name": "entity.alias.import.go"},
+						"2": {"name": "string.quoted.double.go"},
+						"3": {"name": "punctuation.definition.string.begin.go"},
+						"4": {"name": "entity.name.import.go"},
+						"5": {"name": "punctuation.definition.string.end.go"}
+					}
+				},
+				{
+					"begin": "\\(",
+					"beginCaptures": {"0": {"name": "punctuation.definition.imports.begin.bracket.round.go"}},
+					"end": "\\)",
+					"endCaptures": {"0": {"name": "punctuation.definition.imports.end.bracket.round.go"}},
+					"patterns": [
+						{"include": "#comment"},
+						{"include": "#imports"}
+					]
+				}
+			]
+		},
+  },
+}

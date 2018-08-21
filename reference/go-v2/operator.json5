@@ -1,0 +1,57 @@
+{
+  "repository": {
+		"operator": {
+			"comment": "Note that the order here is very important!",
+			"patterns": [
+				{
+					"match": "(&)(?=\\w)",
+					"name": "keyword.operator.pointer.go"
+				},
+				{
+					"match": "(?<=\\s|\\()(\\*)(?=\\w)",
+					"name": "keyword.operator.pointer.go"
+				},
+				{
+					"match": "<\\-",
+					"name": "keyword.operator.channel.go"
+				},
+				{
+					"match": "\\-\\-",
+					"name": "keyword.operator.decrement.go"
+				},
+				{
+					"match": "\\+\\+",
+					"name": "keyword.operator.increment.go"
+				},
+				{
+					"match": "(==|!=|<=|>=|<(?!<)|>(?!>))",
+					"name": "keyword.operator.comparison.go"
+				},
+				{
+					"match": "(&&|\\|\\||!)",
+					"name": "keyword.operator.logical.go"
+				},
+				{
+					"match": "(=|\\+=|\\-=|\\|=|\\^=|\\*=|/=|:=|%=|<<=|>>=|&\\^=|&=)",
+					"name": "keyword.operator.assignment.go"
+				},
+				{
+					"match": "(\\+|\\-|\\*|/|%)",
+					"name": "keyword.operator.arithmetic.go"
+				},
+				// {
+				// 	"match": "(&(?!\\^)|\\||\\^|&\\^|<<|>>)",
+				// 	"name": "keyword.operator.arithmetic.bitwise.go"
+				// },
+				{
+					"match": "(\\||\\^|&\\^|<<|>>)",
+					"name": "keyword.operator.arithmetic.bitwise.go"
+				},
+				{
+					"match": "\\.\\.\\.",
+					"name": "keyword.operator.ellipsis.go"
+				}
+			]
+		},
+  }
+}

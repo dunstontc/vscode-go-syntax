@@ -1,0 +1,46 @@
+{
+  "repository": {
+    "meta": {
+      "patterns": [
+        {
+          "name": "meta.section.struct.go",
+          "begin": "\\s(struct)\\s(\\{)",
+          "beginCaptures": {
+            "1": {"name": "keyword.struct.go"},
+            "2": {"name": "punctuation.definition.struct.go"}
+          },
+          "end":"\\}",
+          "endCaptures": {"0": {"name": "punctuation.definition.struct.go"}},
+          "patterns": [
+            {
+              "match": "^\\s+\\w+\\s+?(?=\\/|$)",
+              "name": "entity.name.type.anonymous-field.go"
+            },
+            {
+              "match": "(?:^\\s+)(\\w+)\\s+(\\w+)\\s+?(?=\\/|$)",
+              "captures": {
+                "1": {"name": "variable.other.field.go"},
+                "2": {"name": "entity.name.type.go"},
+              },
+            },
+            {"include": "$self"},
+          ],
+        },
+        {
+          "begin": "\\[",
+          "beginCaptures": {"0": {"name": "punctuation.definition.begin.bracket.square.go"}},
+					"end": "\\]",
+          "endCaptures": {"0": {"name": "punctuation.definition.end.bracket.square.go"}},
+          "name": "meta.section.range.go",
+          "patterns": [
+            {
+              "name": "keyword.operator.slice.go",
+              "match": "\\:"
+            },
+            {"include": "$self"},
+          ],
+				}
+      ]
+    }
+  }
+}
