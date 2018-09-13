@@ -1,6 +1,9 @@
 # Change Log
 
 
+## 0.0.19 *(September 13, 2018)*
+- Update readme.
+
 ## 0.0.18 *(August 21, 2018)*
 - Fix some overzealous type highlighting.
 - Start work on v0.1.0.

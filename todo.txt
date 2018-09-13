@@ -6,3 +6,4 @@
 2018-08-19 Anonymous Structs.
 2018-08-19 ISSUE #1
 2018-08-19 ISSUE #2
+2018-08-25 Look into scientific notation for floats.

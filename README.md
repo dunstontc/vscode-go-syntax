@@ -2,6 +2,14 @@
 [![GitHub issues](https://img.shields.io/github/issues/dunstontc/vscode-go-syntax.svg)](https://github.com/dunstontc/vscode-go-syntax/issues)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/dunstontc/vscode-go-syntax/blob/master/LICENSE) 
 
+## Notes
+
+If you want to use [Emmet](https://docs.emmet.io/) in `.gohtml` files, add this to your `settings.json` file:
+```json
+  "emmet.includeLanguages": {
+    "GoHTML": "html",
+  }
+```
 
 ## Resources
 - [kkos/oniguruma/doc/RE](https://github.com/kkos/oniguruma/blob/master/doc/RE)
